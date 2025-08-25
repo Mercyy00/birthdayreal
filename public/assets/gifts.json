@@ -1,0 +1,11 @@
+{
+  "items": [
+    { "type": "note", "title": "A Love Note", "text": "Divyanshi, you light up my world. — Jayesh" },
+   
+     { "type": "voice", "title": "Voice Note 1", "src": "/assets/voice1.mp3" },
+      { "type": "voice", "title": "Voice Note 2", "src": "/assets/voice2.mp3" },
+  { "type": "image", "title": "A Small Gift", "src": "/assets/gift.jpg" }
+  ]
+}
+
+ 

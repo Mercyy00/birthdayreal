@@ -1,0 +1,14 @@
+{
+  "songs": [
+    { "title": "Birthday Song (Default)", "src": "/birthday-song.wav" },
+    { "title": "A Thousand Years", "src": "/assets/thousandyear.mp3" },
+    { "title": "Blue", "src": "/assets/blue.mp3" },
+    { "title": "Call This Love", "src": "/assets/callthislove.mp3" },
+    { "title": "Can't Help", "src": "/assets/canthelp.mp3" },
+    { "title": "CO2", "src": "/assets/co2.mp3" },
+    { "title": "Die With Smile", "src": "/assets/diewithsmile.mp3" },
+    { "title": "Here With Me", "src": "/assets/herewithme.mp3" },
+    { "title": "Wanna Be Yours", "src": "/assets/wanna.mp3" },
+    { "title": "Line Without", "src": "/assets/linewithout.mp3" }
+  ]
+}

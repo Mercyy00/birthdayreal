@@ -1,0 +1,16 @@
+{
+  "name": "Happy Birthday, Divyanshi!",
+  "short_name": "Birthday 💕",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fde68a",
+  "theme_color": "#f472b6",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
+

@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Birthday Journey Design System - Super Cute & Magical */
+
+@layer base {
+  :root {
+    /* Core Birthday Theme Colors */
+    --background: 340 100% 97%;
+    --foreground: 340 15% 25%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 340 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 15% 25%;
+
+    /* Primary - Warm Pink */
+    --primary: 340 82% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Lavender */
+    --secondary: 280 60% 85%;
+    --secondary-foreground: 340 15% 25%;
+
+    /* Muted - Light Cream */
+    --muted: 35 100% 96%;
+    --muted-foreground: 340 15% 45%;
+
+    /* Accent - Golden Yellow */
+    --accent: 45 96% 75%;
+    --accent-foreground: 340 15% 25%;
+
+    /* Special Birthday Colors */
+    --birthday-pink: 340 82% 65%;
+    --birthday-purple: 280 60% 75%;
+    --birthday-gold: 45 96% 75%;
+    --birthday-cream: 35 100% 96%;
+    --birthday-peach: 15 100% 85%;
+
+    /* Interactive States */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 30% 90%;
+    --input: 340 30% 95%;
+    --ring: 340 82% 65%;
+
+    /* Magical Gradients */
+    --gradient-magical: linear-gradient(135deg, hsl(340, 82%, 75%) 0%, hsl(280, 60%, 80%) 50%, hsl(45, 96%, 85%) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(15, 100%, 88%) 0%, hsl(340, 82%, 85%) 100%);
+    --gradient-sparkle: radial-gradient(circle, hsl(45, 96%, 85%) 0%, hsl(340, 82%, 75%) 70%);
+
+    /* Glow Effects */
+    --glow-pink: 0 0 20px hsl(340, 82%, 75%);
+    --glow-gold: 0 0 25px hsl(45, 96%, 75%);
+    --glow-purple: 0 0 15px hsl(280, 60%, 75%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(340, 82%, 85%, 0.3);
+    --shadow-magical: 0 8px 30px hsl(340, 82%, 75%, 0.4);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode Birthday Theme */
+    --background: 340 50% 8%;
+    --foreground: 340 100% 95%;
+
+    --card: 340 40% 12%;
+    --card-foreground: 340 100% 95%;
+
+    --popover: 340 40% 12%;
+    --popover-foreground: 340 100% 95%;
+
+    --primary: 340 82% 75%;
+    --primary-foreground: 340 50% 8%;
+
+    --secondary: 280 40% 20%;
+    --secondary-foreground: 340 100% 95%;
+
+    --muted: 340 30% 15%;
+    --muted-foreground: 340 30% 70%;
+
+    --accent: 45 96% 65%;
+    --accent-foreground: 340 50% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 340 100% 95%;
+
+    --border: 340 30% 20%;
+    --input: 340 30% 20%;
+    --ring: 340 82% 75%;
+
+    /* Dark Mode Gradients */
+    --gradient-magical: linear-gradient(135deg, hsl(340, 82%, 45%) 0%, hsl(280, 60%, 50%) 50%, hsl(45, 96%, 55%) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(15, 100%, 25%) 0%, hsl(340, 82%, 35%) 100%);
+    --gradient-sparkle: radial-gradient(circle, hsl(45, 96%, 55%) 0%, hsl(340, 82%, 45%) 70%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+
+  /* Magical Birthday Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: var(--glow-pink); }
+    50% { box-shadow: var(--glow-gold); }
+  }
+
+  @keyframes heart-rise {
+    0% { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+    }
+    100% { 
+      opacity: 0; 
+      transform: translateY(-100px) scale(0.5); 
+    }
+  }
+
+  @keyframes candle-flicker {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(1deg); }
+    50% { transform: scale(0.95) rotate(-1deg); }
+    75% { transform: scale(1.02) rotate(0.5deg); }
+  }
+
+  @keyframes plane-fly {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(var(--plane-end-x, 300px)) translateY(var(--plane-end-y, -50px)); }
+  }
+
+  @keyframes balloon-float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    33% { transform: translateY(-15px) rotate(1deg); }
+    66% { transform: translateY(-8px) rotate(-1deg); }
+  }
+
+  @keyframes gift-bounce {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(2deg); }
+  }
+
+  @keyframes fade-in-up {
+    0% { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  /* Animation Classes */
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  .animate-sparkle { animation: sparkle 2s ease-in-out infinite; }
+  .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
+  .animate-heart-rise { animation: heart-rise 3s ease-out forwards; }
+  .animate-candle-flicker { animation: candle-flicker 0.5s ease-in-out infinite; }
+  .animate-plane-fly { animation: plane-fly 3s ease-in-out forwards; }
+  .animate-balloon-float { animation: balloon-float 4s ease-in-out infinite; }
+  .animate-gift-bounce { animation: gift-bounce 2s ease-in-out infinite; }
+  .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+
+  /* Confetti animation used on candle blow-out */
+  @keyframes confetti-fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0.9; }
+  }
+  .animate-confetti { animation-name: confetti-fall; animation-timing-function: linear; }
+
+  /* Fireworks */
+  @keyframes firework-burst {
+    0% { transform: scale(0); opacity: 1; }
+    80% { transform: scale(1); opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .firework {
+    position: absolute;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: transparent;
+    box-shadow:
+      0 -20px 0 2px #F472B6,
+      14px -14px 0 2px #C4B5FD,
+      20px 0 0 2px #FDE68A,
+      14px 14px 0 2px #A7F3D0,
+      0 20px 0 2px #93C5FD,
+      -14px 14px 0 2px #FCA5A5,
+      -20px 0 0 2px #F472B6,
+      -14px -14px 0 2px #C4B5FD;
+    animation: firework-burst 1.6s ease-out infinite;
+  }
+
+  /* Sparkler text effect */
+  .sparkler-text {
+    color: transparent;
+    background: radial-gradient(circle, #fff 0%, #ffd780 60%, transparent 70%) center/4px 4px,
+                linear-gradient(90deg, #ffd1e5, #d9c6ff, #ffe9a3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 16px rgba(255, 237, 188, 0.8), 0 0 24px rgba(255, 192, 203, 0.6);
+  }
+
+  /* Aurora background for easter egg */
+  .aurora-bg {
+    background: radial-gradient(1000px 600px at 10% 10%, rgba(255, 182, 193, 0.3), transparent 60%),
+                radial-gradient(800px 500px at 90% 20%, rgba(173, 216, 230, 0.25), transparent 60%),
+                radial-gradient(700px 400px at 50% 90%, rgba(221, 160, 221, 0.25), transparent 60%),
+                linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.2));
+  }
+
+  /* Magical Background */
+  .magical-bg {
+    background: var(--gradient-magical);
+  }
+
+  .sunset-bg {
+    background: var(--gradient-sunset);
+  }
+
+  .sparkle-bg {
+    background: var(--gradient-sparkle);
+  }
+
+  /* Custom Buttons */
+  .mystery-button {
+    @apply w-20 h-20 rounded-full border-2 border-transparent cursor-pointer transition-all duration-300;
+    background: transparent;
+  }
+
+  .mystery-button:hover {
+    @apply border-primary;
+    box-shadow: var(--glow-pink);
+  }
+
+  .mystery-button.correct {
+    /* Hint removed: no special styling for the correct button */
+  }
+
+
+  /* Cute UI Elements */
+  .cute-card {
+    @apply bg-card/80 backdrop-blur-sm rounded-2xl p-6;
+    box-shadow: var(--shadow-magical);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .magical-button {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .magical-button:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-magical);
+  }
+}
