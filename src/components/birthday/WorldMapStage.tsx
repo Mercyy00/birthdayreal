@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./WorldMapStage.custom.css";
 import { Button } from '@/components/ui/button';
 import { Heart, Plane } from 'lucide-react';
 
@@ -21,7 +22,7 @@ const WorldMapStage = ({ onJourneyStart }: WorldMapStageProps) => {
 
   const handleHeartClick = (index: number) => {
     setSelectedHeart(index);
-    setTimeout(() => setSelectedHeart(null), 3000);
+    setTimeout(() => setSelectedHeart(null), 5000);
   };
 
   const startJourney = () => {
@@ -80,17 +81,19 @@ const WorldMapStage = ({ onJourneyStart }: WorldMapStageProps) => {
           </svg>
           
           {/* Plane following the path feel */}
-          <div className="absolute top-1/2 left-8 transform -translate-y-1/2">
-            <div className={`relative text-5xl transition-all duration-2000 ${
-              showHearts ? 'transform translate-x-96 -translate-y-12' : ''
-            }`} style={{ transform: showHearts ? 'translateX(400px) translateY(-50px) rotate(15deg)' : 'none' }}>
+          <div className="absolute top-1/2 left-8 w-20 h-20" style={{ pointerEvents: 'none' }}>
+            <div
+              className={`relative text-5xl plane-anim ${showHearts ? 'plane-fly' : ''}`}
+              style={{
+                transition: 'none',
+                animation: showHearts ? 'planePath 2.8s cubic-bezier(0.77,0,0.18,1) forwards' : 'none'
+              }}
+            >
               ✈️
+              <div className="absolute top-3 left-6 text-xs">😊</div>
+              <div className="absolute top-2 -right-4 text-pink-400 text-sm animate-pulse">💕</div>
+              <div className="absolute top-6 -right-8 text-rose-400 text-xs animate-pulse" style={{ animationDelay: '0.5s' }}>💖</div>
             </div>
-            {/* Cute face on the plane */}
-            <div className="absolute top-3 left-6 text-xs">😊</div>
-            {/* Heart trail */}
-            <div className="absolute top-2 -right-4 text-pink-400 text-sm animate-pulse">💕</div>
-            <div className="absolute top-6 -right-8 text-rose-400 text-xs animate-pulse" style={{ animationDelay: '0.5s' }}>💖</div>
           </div>
           
           {/* Cute details */}
@@ -105,12 +108,13 @@ const WorldMapStage = ({ onJourneyStart }: WorldMapStageProps) => {
           {[...Array(5)].map((_, i) => (
             <Heart
               key={i}
-              className="absolute text-pink-400 cursor-pointer hover:scale-125 transition-all duration-300 animate-float"
-              size={20}
+              className="absolute text-pink-400 cursor-pointer hover:scale-125 transition-all duration-300 animate-float-slow"
+              size={24}
               style={{
                 left: `${20 + i * 15 + Math.random() * 10}%`,
                 top: `${30 + Math.random() * 40}%`,
-                animationDelay: `${i * 0.5}s`
+                animationDelay: `${i * 1.2}s`,
+                animationDuration: '7s'
               }}
               fill="currentColor"
               onClick={() => handleHeartClick(i)}
@@ -122,8 +126,8 @@ const WorldMapStage = ({ onJourneyStart }: WorldMapStageProps) => {
       {/* Secret message popup */}
       {selectedHeart !== null && (
         <div className="fixed inset-0 flex items-center justify-center z-50 animate-fade-in-up">
-          <div className="cute-card max-w-md mx-4 text-center">
-            <Heart className="text-pink-400 w-8 h-8 mx-auto mb-4" fill="currentColor" />
+          <div className="cute-card max-w-md mx-4 text-center animate-heart-popup">
+            <Heart className="text-pink-400 w-8 h-8 mx-auto mb-4 animate-float-slow" fill="currentColor" />
             <p className="text-lg font-medium text-foreground">
               {heartMessages[selectedHeart]}
             </p>

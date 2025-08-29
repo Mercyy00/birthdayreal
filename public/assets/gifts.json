@@ -4,7 +4,11 @@
    
      { "type": "voice", "title": "Voice Note 1", "src": "/assets/voice1.mp3" },
       { "type": "voice", "title": "Voice Note 2", "src": "/assets/voice2.mp3" },
-  { "type": "image", "title": "A Small Gift", "src": "/assets/gift.jpg" }
+  { "type": "image", "title": "A Small Gift", "src": "/assets/gift.jpg" },
+  { "type": "link", "title": "Mi amor", "url": "https://mercyy00.github.io/life/" },
+   { "type": "link", "title": "My Gwen", "url": "https://mercyy00.github.io/my-GWEN/" },
+   { "type": "link", "title": "Love Tree", "url": "https://newtree.vercel.app/" }
+
   ]
 }
 

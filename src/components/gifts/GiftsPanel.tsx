@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 type GiftItem =
   | { type: 'note'; title: string; text: string }
   | { type: 'voice'; title: string; src: string }
-  | { type: 'image'; title: string; src: string };
+  | { type: 'image'; title: string; src: string }
+  | { type: 'link'; title: string; url: string };
 
 const GiftsPanel = ({ onClose }: { onClose: () => void }) => {
   const [items, setItems] = useState<GiftItem[]>([]);
@@ -48,6 +49,16 @@ const GiftsPanel = ({ onClose }: { onClose: () => void }) => {
               {item.type === 'image' && (
                 <img src={(item as any).src} alt={item.title} className="w-full h-48 object-contain" />
               )}
+              {item.type === 'link' && (
+                <a
+                  href={(item as any).url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-4 py-2 bg-pink-200 text-pink-900 rounded-full font-semibold shadow hover:bg-pink-300 transition"
+                >
+                  Visit Link
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -71,6 +82,16 @@ const GiftsPanel = ({ onClose }: { onClose: () => void }) => {
               )}
               {items[openIdx].type === 'image' && (
                 <img src={(items[openIdx] as any).src} alt={items[openIdx].title} className="w-full max-h-[50vh] object-contain mb-4" />
+              )}
+              {items[openIdx].type === 'link' && (
+                <a
+                  href={(items[openIdx] as any).url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-4 py-2 bg-pink-200 text-pink-900 rounded-full font-semibold shadow hover:bg-pink-300 transition mb-4"
+                >
+                  Visit Link
+                </a>
               )}
               <button
                 onClick={closeGift}

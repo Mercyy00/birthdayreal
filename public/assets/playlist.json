@@ -1,6 +1,6 @@
 {
   "songs": [
-    { "title": "Birthday Song (Default)", "src": "/birthday-song.wav" },
+    { "title": "Birthday Song (Default)", "src": "/assets/1.mp3" },
     { "title": "A Thousand Years", "src": "/assets/thousandyear.mp3" },
     { "title": "Blue", "src": "/assets/blue.mp3" },
     { "title": "Call This Love", "src": "/assets/callthislove.mp3" },
